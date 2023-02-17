@@ -42,6 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String regEmail = regEmailEditText.getText().toString();
                 String regPassword = regPasswordEditText.getText().toString();
                 String regConfirmPassword = regConfirmPassEditText.getText().toString();
+                Database database = new Database(getApplicationContext(), "health", null, 1);
 
                 if (regUserName.length() == 0 || regEmail.length() == 0 || regPassword.length() == 0 || regConfirmPassword.length() == 0) {
                     Toast.makeText(getApplicationContext(), "Please fill all the filed", Toast.LENGTH_SHORT).show();
@@ -49,7 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
                     if (regPassword.compareTo(regConfirmPassword) == 0) {
                         if (isValid(regPassword)) {
 
-
+                            database.register(regUserName, regEmail, regPassword);
                             Toast.makeText(getApplicationContext(), "Registered  Successfully", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(RegisterActivity.this, LoginActivty.class));
                         }
