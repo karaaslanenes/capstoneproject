@@ -10,8 +10,34 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
+
     @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+    public void passWordisValid() {
+        assertTrue(RegisterActivity.isValid("Enes123?"));
+    }
+
+    @Test
+    public void passWordNotValid1(){
+        assertFalse(RegisterActivity.isValid("enes"));
+    }
+    @Test
+    public void passWordNotValid2(){
+        assertFalse(RegisterActivity.isValid("Enes"));
+    }
+    @Test
+    public void passWordNotValid3(){
+        assertFalse(RegisterActivity.isValid("Enes1"));
+    }
+    @Test
+    public void passWordNotValid4(){
+        assertFalse(RegisterActivity.isValid("Enes12"));
+    }
+    @Test
+    public void passWordNotValid5(){
+        assertFalse(RegisterActivity.isValid("Enes123"));
+    }
+    @Test
+    public void passWordNotValid6(){
+        assertFalse(RegisterActivity.isValid("Enes1234"));
     }
 }
