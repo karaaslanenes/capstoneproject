@@ -17,6 +17,10 @@ public class ExampleUnitTest {
     public void passWordisValid() {
         assertTrue(RegisterActivity.isValid("Enes123?"));
     }
+    @Test
+    public void passWordValid2(){
+        assertTrue(RegisterActivity.isValid("ALEx123?"));
+    }
 
     @Test
     public void passWordNotValid1(){
@@ -44,6 +48,7 @@ public class ExampleUnitTest {
     }
     @Test
     public void get(){
-       
+       DoctorDetails doctorDetails=new DoctorDetails("ivan","dentist","7","43678567","250");
+
     }
 }
