@@ -84,5 +84,58 @@ public class DoctorBaseHelper extends SQLiteOpenHelper {
             return false;
         }
     }
+    public boolean deleteDoctor(String doctor_name){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        int delete = db.delete(DoctorTable.NAME, DoctorTable.Cols.DOCTOR_NAME + " =?", new String[]{doctor_name});
+        db.close();
+        if (delete > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public  DoctorDetails searchDoctor(String doctor_name){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+
+        String query = "SELECT * FROM " + DoctorTable.NAME + " WHERE " + DoctorTable.Cols.DOCTOR_NAME + " = '" + doctor_name+ "'";
+        DoctorDetails doctorDetails;
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor.moveToFirst()){
+            String doctorName = cursor.getString(0);
+            String doctorSpeciality = cursor.getString(1);
+            String doctorExperience= cursor.getString(2);
+            String doctorPhone = cursor.getString(3);
+            String constFee=cursor.getString(4);
+
+            doctorDetails = new DoctorDetails(doctorName, doctorSpeciality, doctorExperience, doctorPhone, constFee);
+            db.close();
+        } else {;
+            return null;
+        }
+        return doctorDetails;
+    }
+
+    public ArrayList<DoctorDetails> allDoctorRecords(){
+        ArrayList<DoctorDetails> allDoctorRecords = new ArrayList<DoctorDetails>();
+        SQLiteDatabase db = getReadableDatabase();
+
+        //Use cursor to fetch record
+        Cursor cursor = db.rawQuery("SELECT * FROM "+ DoctorTable.NAME, null);
+
+        if (cursor.moveToFirst()){
+            do {
+                allDoctorRecords.add(new DoctorDetails(cursor.getString(0), cursor.getString(1),
+                        cursor.getString(2), cursor.getString(3), cursor.getString(4)));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return allDoctorRecords;
+    }
 
 }
