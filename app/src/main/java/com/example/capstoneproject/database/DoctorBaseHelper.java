@@ -59,6 +59,30 @@ public class DoctorBaseHelper extends SQLiteOpenHelper {
             return true;
         }
     }
+    public boolean upDateDoctor(DoctorDetails doctorDetails){
+        SQLiteDatabase db = this.getWritableDatabase();
 
+        String doctor_name = String.valueOf(doctorDetails.getDoctor_name());
+        ContentValues values = getContentValues(doctorDetails);
+        int update = db.update(DoctorTable.NAME, values, DoctorTable.Cols.DOCTOR_NAME + " =?", new String[]{doctor_name});
+        db.close();
+        if (update > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean deleteDoctor(String doctor_name){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        int delete = db.delete(DoctorTable.NAME, DoctorTable.Cols.DOCTOR_NAME + " =?", new String[]{doctor_name});
+        db.close();
+        if (delete > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }
