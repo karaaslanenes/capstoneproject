@@ -84,4 +84,10 @@ public class ExampleUnitTest {
         String expectedPrx="250";
         Assert.assertEquals(expectedPrx,actualPrx);
     }
+
+    @Test
+
+    public void db(){
+
+    }
 }
