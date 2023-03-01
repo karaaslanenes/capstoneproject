@@ -1,10 +1,16 @@
 package com.example.capstoneproject;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.example.capstoneproject.database.DoctorBaseHelper;
@@ -41,4 +47,17 @@ public class DoctorFragment extends Fragment {
         db.addDoctor(new DoctorDetails("YUNG MI","DENTIST","5 YRS","543214534","150$"));
 
     }
-}
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View v=inflater.inflate(R.layout.fragmnet_doctor,container,false);
+        Toolbar doctortoolbar=(Toolbar) v.findViewById(R.id.doctortoolbar);
+        AppCompatActivity activity = (AppCompatActivity) getActivity();
+        activity.setSupportActionBar(doctortoolbar);
+
+
+        doctorDetailText_view = (TextView) v.findViewById(R.id.DoctorInfotextView);
+        doctorDetailText_view.setText("Name :" + allDoctorArrayList.get(currentIndex).getDoctor_name() + " /" + "Speciality :" + allDoctorArrayList.get(currentIndex).getDoctor_speciality() + " /" + "Exp:" + allDoctorArrayList.get(currentIndex).getDoctor_experiences() + " /" + "Phone:" + allDoctorArrayList.get(currentIndex).getDoctor_phone() + " /" + "Conslt_fee :" + allDoctorArrayList.get(currentIndex).getConsultant_fee());
+
+    }
