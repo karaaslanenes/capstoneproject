@@ -1,5 +1,6 @@
 package com.example.capstoneproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,4 +61,33 @@ public class DoctorFragment extends Fragment {
         doctorDetailText_view = (TextView) v.findViewById(R.id.DoctorInfotextView);
         doctorDetailText_view.setText("Name :" + allDoctorArrayList.get(currentIndex).getDoctor_name() + " /" + "Speciality :" + allDoctorArrayList.get(currentIndex).getDoctor_speciality() + " /" + "Exp:" + allDoctorArrayList.get(currentIndex).getDoctor_experiences() + " /" + "Phone:" + allDoctorArrayList.get(currentIndex).getDoctor_phone() + " /" + "Conslt_fee :" + allDoctorArrayList.get(currentIndex).getConsultant_fee());
 
+        nextDoctorButton = (Button) v.findViewById(R.id.DoctorNextButton);
+        nextDoctorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                currentIndex = (currentIndex + 1) % allDoctorArrayList.size();
+                doctorDetailText_view.setText("Name :" + allDoctorArrayList.get(currentIndex).getDoctor_name() + " /" + "Speciality :" + allDoctorArrayList.get(currentIndex).getDoctor_speciality() + " /" + "Exp:" + allDoctorArrayList.get(currentIndex).getDoctor_experiences() + " /" + "Phone:" + allDoctorArrayList.get(currentIndex).getDoctor_phone() + " /" + "Conslt_fee :" + allDoctorArrayList.get(currentIndex).getConsultant_fee());
+
+
+            }
+        });
+
+        previousDoctorButton = (Button) v.findViewById(R.id.DoctorPreviousregisterbutton);
+        previousDoctorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                currentIndex = (currentIndex + (allDoctorArrayList.size()- 1)) % allDoctorArrayList.size();
+                doctorDetailText_view.setText("Name :" + allDoctorArrayList.get(currentIndex).getDoctor_name() + " /" + "Speciality :" + allDoctorArrayList.get(currentIndex).getDoctor_speciality() + " /" + "Exp:" + allDoctorArrayList.get(currentIndex).getDoctor_experiences() + " /" + "Phone:" + allDoctorArrayList.get(currentIndex).getDoctor_phone() + " /" + "Conslt_fee :" +allDoctorArrayList.get(currentIndex).getConsultant_fee());
+            }
+        });
+        updateDetailsButton = (Button) v.findViewById(R.id.DocotorUpdateRegisterbutton);
+        updateDetailsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), DoctorActivity.class);
+                intent.putExtra( EXTRA_DOCTOR_NAME, allDoctorArrayList.get(currentIndex).getDoctor_name());
+                getActivity().startActivity(intent);
+
+            }
+        });
     }
