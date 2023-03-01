@@ -3,10 +3,14 @@ package com.example.capstoneproject;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -90,4 +94,23 @@ public class DoctorFragment extends Fragment {
 
             }
         });
+        booking=(Button) v.findViewById(R.id.docotorBookingbutton);
+        booking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),AppointmnetActivity.class);
+                intent.putExtra( EXTRA_DOCTOR_NAME, allDoctorArrayList.get(currentIndex).getDoctor_name());
+                getActivity().startActivity(intent);
+            }
+        });
+        return v;
+
+
+
+    }
+    protected void fillBillingsArrayList() {
+        allDoctorArrayList = db.allDoctorRecords();
+    }
+
+
     }
