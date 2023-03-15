@@ -16,7 +16,10 @@ public class DoctorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_doctor);
         fragmentManager = getSupportFragmentManager();
         fragment = fragmentManager.findFragmentById(R.id.doctoractivity_fragment);
-
+        if (fragment == null) {
+            fragment=new DoctorActivtyFragment();
+            fragmentManager.beginTransaction().add(R.id.doctoractivity_fragment, fragment).commit();
+        }
 
     }
 
