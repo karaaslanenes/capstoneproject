@@ -14,7 +14,11 @@ public class DoctorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor);
+        fragmentManager = getSupportFragmentManager();
+        fragment = fragmentManager.findFragmentById(R.id.doctoractivity_fragment);
 
+
+    }
 
 
 }
