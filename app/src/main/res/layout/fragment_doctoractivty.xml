@@ -234,6 +234,53 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/DoctorInfoUDExpertextView"
         app:layout_constraintTop_toBottomOf="@+id/DoctorInfoUDExpertextView" />
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="84dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="36dp"
+        android:text="Fees :"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/DoctorInfoUDPhonetextView"
+        app:layout_constraintHorizontal_bias="0.764"
+        app:layout_constraintStart_toStartOf="@+id/DoctorInfoUDPhonetextView"
+        app:layout_constraintTop_toBottomOf="@+id/DoctorInfoUDPhonetextView" />
+
+    <Button
+        android:id="@+id/deletebutton"
+        android:layout_width="156dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_bg"
+        android:text="DELETE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.803"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DoctorInfoUDFeeeditText" />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="157dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_bg"
+        android:text="SEARCH"
+        app:layout_constraintStart_toStartOf="@+id/Updatebutton"
+        app:layout_constraintTop_toBottomOf="@+id/Updatebutton" />
+
+    <Button
+        android:id="@+id/viewListButton"
+        android:layout_width="147dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/btn_bg"
+        android:text="VIEW LIST"
+        app:layout_constraintEnd_toEndOf="@+id/deletebutton"
+        app:layout_constraintTop_toBottomOf="@+id/deletebutton" />
+
 
 
 
