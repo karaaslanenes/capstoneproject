@@ -194,6 +194,47 @@
         app:layout_constraintHorizontal_bias="0.029"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/DoctorInfoUDtextView" />
+    <TextView
+        android:id="@+id/DoctorInfoUDSpecialityTextView"
+        android:layout_width="94dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="36dp"
+        android:text="Speciality :"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/DoctorInfoUDNametextView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/DoctorInfoUDNametextView"
+        app:layout_constraintTop_toBottomOf="@+id/DoctorInfoUDNametextView" />
+    <TextView
+        android:id="@+id/DoctorInfoUDExpertextView"
+        android:layout_width="91dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="44dp"
+        android:text="Experince :"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/DoctorInfoUDSpecialityTextView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/DoctorInfoUDSpecialityTextView"
+        app:layout_constraintTop_toBottomOf="@+id/DoctorInfoUDSpecialityTextView" />
+
+    <TextView
+        android:id="@+id/DoctorInfoUDPhonetextView"
+        android:layout_width="82dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="40dp"
+        android:text="Phone :"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/DoctorInfoUDExpertextView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/DoctorInfoUDExpertextView"
+        app:layout_constraintTop_toBottomOf="@+id/DoctorInfoUDExpertextView" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
