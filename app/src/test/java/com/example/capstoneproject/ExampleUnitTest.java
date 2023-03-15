@@ -53,6 +53,7 @@ public class ExampleUnitTest {
       String actualName=doctorDetails.getDoctor_name();
       String expectedName="ivan";
         Assert.assertEquals(expectedName,actualName);
+
     }
     @Test
     public void getSpecialty(){
