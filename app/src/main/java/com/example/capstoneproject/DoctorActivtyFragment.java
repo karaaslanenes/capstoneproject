@@ -51,6 +51,24 @@ public class DoctorActivtyFragment extends Fragment{
         db = new DoctorBaseHelper(getActivity());
         fillBillingsArrayList();
 
+        @Override
+        public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+            View v = inflater.inflate(R.layout.fragment_doctoractivty, container, false);
 
+            doctorNameEditText = (EditText) v.findViewById(R.id.DoctorInfoUDNameeditText);
+            doctorNameEditText.setText(allDoctorArrayList.get(currentIndex).getDoctor_name());
+
+            doctorSpecialityEditText = (EditText) v.findViewById(R.id.DoctorInfoUDSpecialityeditText);
+            doctorSpecialityEditText.setText(allDoctorArrayList.get(currentIndex).getDoctor_speciality());
+
+            doctorExperienceEditText = (EditText) v.findViewById(R.id.DoctorInfoUDExperinceeditText);
+            doctorExperienceEditText.setText(allDoctorArrayList.get(currentIndex).getDoctor_experiences());
+
+            doctorPhoneEditText = (EditText) v.findViewById(R.id.DocotorInfoUDPhoneeditText);
+            doctorPhoneEditText.setText(allDoctorArrayList.get(currentIndex).getDoctor_phone());
+
+            consultancyFeeEditText = (EditText) v.findViewById(R.id.DoctorInfoUDFeeeditText);
+            consultancyFeeEditText.setText(allDoctorArrayList.get(currentIndex).getConsultant_fee());
+            doctorUpdateButton=(Button) v.findViewById(R.id.Updatebutton);
     }
 }
