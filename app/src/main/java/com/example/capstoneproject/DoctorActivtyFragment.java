@@ -71,4 +71,7 @@ public class DoctorActivtyFragment extends Fragment{
             consultancyFeeEditText.setText(allDoctorArrayList.get(currentIndex).getConsultant_fee());
             doctorUpdateButton=(Button) v.findViewById(R.id.Updatebutton);
     }
+        protected void fillBillingsArrayList() {
+            allDoctorArrayList = db.allDoctorRecords();
+        }
 }
