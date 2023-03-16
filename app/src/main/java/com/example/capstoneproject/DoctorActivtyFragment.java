@@ -100,8 +100,6 @@ public class DoctorActivtyFragment extends Fragment {
 
     }
 
-    protected void fillBillingsArrayList() {
-        allDoctorArrayList = db.allDoctorRecords();
-    }
+
 
 }
