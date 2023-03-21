@@ -92,7 +92,26 @@ public class DoctorActivtyFragment extends Fragment {
                 }
             }
         });
+        doctoreSearchButton=(Button) v.findViewById(R.id.searchButton);
+        doctoreSearchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DoctorDetails researhers = db.searchDoctor(doctorNameEditText.getText().toString());
+                if (researhers != null){
+                    doctorNameEditText.setText(researhers.getDoctor_name());
+                    doctorSpecialityEditText.setText(researhers.getDoctor_speciality());
+                    doctorExperienceEditText.setText(researhers.getDoctor_experiences());
+                    doctorPhoneEditText.setText(researhers.getDoctor_phone());
+                    consultancyFeeEditText.setText(researhers.getConsultant_fee());
+                } else {
+                    doctorSpecialityEditText.setText("Doctor not found");
+                    doctorExperienceEditText.setText("");
+                    doctorPhoneEditText.setText("");
+                    consultancyFeeEditText.setText("");
+                }
+            }
 
+        });
 
 
         return v;
