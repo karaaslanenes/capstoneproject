@@ -129,6 +129,7 @@ public class DoctorActivtyFragment extends Fragment {
 
             }
         });
+        //doctorviewacty must be created
         doctorViewButton=(Button) v.findViewById(R.id.viewListButton);
 
         doctorViewButton.setOnClickListener(new View.OnClickListener() {
