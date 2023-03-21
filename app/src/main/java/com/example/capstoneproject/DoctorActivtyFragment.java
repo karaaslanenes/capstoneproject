@@ -113,6 +113,22 @@ public class DoctorActivtyFragment extends Fragment {
 
         });
 
+        doctorDeleteButton=(Button) v.findViewById(R.id.deletebutton);
+        doctorDeleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                boolean success = db.deleteDoctor(doctorNameEditText.getText().toString());
+                if (success) {
+                    Toast.makeText(getActivity(), "Success: "+success, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getActivity(), MainActivity.class);
+                    getActivity().startActivity(intent);
+                } else {
+                    Toast.makeText(getActivity(), "Success: "+success, Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
 
         return v;
 
