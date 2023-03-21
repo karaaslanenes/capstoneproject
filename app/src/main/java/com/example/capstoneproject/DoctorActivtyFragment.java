@@ -129,7 +129,16 @@ public class DoctorActivtyFragment extends Fragment {
 
             }
         });
+        doctorViewButton=(Button) v.findViewById(R.id.viewListButton);
 
+        doctorViewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), DoctorViewActivity.class);
+                getActivity().startActivity(intent);
+            }
+
+        });
         return v;
 
 
