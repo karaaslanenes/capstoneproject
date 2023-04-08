@@ -30,6 +30,15 @@ public class DoctorViewFragment extends Fragment {
 
     }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragmnet_doctor_view, container, false);
 
+        allList_text_view= (TextView) view.findViewById(R.id.allDoctor_text_view);
+        allList_text_view.setText(arrayListDoctors.toString());
+
+        return view;
+    }
 
 }
