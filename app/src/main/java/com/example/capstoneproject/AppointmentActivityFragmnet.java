@@ -119,7 +119,46 @@ public class AppointmentActivityFragmnet extends Fragment {
         return v;
     }
 
+    private void innitDatePicker(){
 
+        DatePickerDialog.OnDateSetListener dateSetListener=new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                i1=i1+1;
+                dateButton.setText(i2+"/"+i1+"/"+i);
+            }
+        };
+        Calendar calendar=Calendar.getInstance();
+        int year=calendar.get(Calendar.YEAR);
+        int month=calendar.get(Calendar.MONTH);
+        int day=calendar.get(Calendar.DAY_OF_MONTH);
+
+        int design= AlertDialog.THEME_HOLO_LIGHT;
+        datePickerDialog=new DatePickerDialog(getActivity(),design,dateSetListener,year,month,day);
+        datePickerDialog.getDatePicker().setMinDate(calendar.getTimeInMillis()+86400000);
+
+    }
+    private void innitTimePicker(){
+        TimePickerDialog.OnTimeSetListener timeSetListener=new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int i, int i1) {
+
+                timeButton.setText(i+":"+i1);
+            }
+        };
+
+        Calendar calendar=Calendar.getInstance();
+        int hours=calendar.get(Calendar.HOUR);
+        int mins=calendar.get(Calendar.MINUTE);
+
+
+        int design= AlertDialog.THEME_HOLO_LIGHT;
+        timePickerDialog=new TimePickerDialog(getActivity(),design,timeSetListener,hours,mins,true);
+
+    }
+    protected void fillBillingsArrayList() {
+        allDoctorArrayList = db.allDoctorRecords();
+    }
 
 
 
