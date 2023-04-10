@@ -82,4 +82,46 @@ public class AppointmentActivityFragmnet extends Fragment {
         consultancyFeeEditText = (EditText) v.findViewById(R.id.APPDoctorFeeeditText);
         consultancyFeeEditText.setText(allDoctorArrayList.get(currentIndex).getConsultant_fee());
 
+        bookingApp=(Button) v.findViewById(R.id.APPBookbutton);
+        bookingApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(),"Your appointment with "+allDoctorArrayList.get(currentIndex).getDoctor_name()+ " has been scheduled ",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        backbutton=(Button) v.findViewById(R.id.APPbACKebutton);
+        backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(),MainActivity.class));
+            }
+        });
+
+
+        dateButton=(Button) v.findViewById(R.id.AppDatebutton);
+        timeButton=(Button) v.findViewById(R.id.AppSelectTimebutton);
+        innitDatePicker();
+        dateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                datePickerDialog.show();
+            }
+        });
+
+        innitTimePicker();
+        timeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                timePickerDialog.show();
+            }
+        });
+        return v;
+    }
+
+
+
+
+
+
 }
