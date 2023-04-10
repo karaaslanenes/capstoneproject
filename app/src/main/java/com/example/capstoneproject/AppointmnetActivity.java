@@ -18,6 +18,11 @@ public class AppointmnetActivity extends AppCompatActivity {
         fragmentManager = getSupportFragmentManager();
         fragment = fragmentManager.findFragmentById(R.id.appointmentactivity_fragment);
 
+        if (fragment == null) {
+            fragment=new AppointmentActivityFragmnet();
+            fragmentManager.beginTransaction().add(R.id.appointmentactivity_fragment, fragment).commit();
+        }
+
     }
 
 
