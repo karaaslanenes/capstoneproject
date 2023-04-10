@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/hh"
+    tools:context=".DoctorContentActivity">
+
+
+    <TextView
+        android:id="@+id/contentdoctor_textView"
+        android:layout_width="362dp"
+        android:layout_height="148dp"
+        android:background="@color/teal_200"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.269" />
+
+        <Button
+            android:id="@+id/calldoctorwebservicesbutton"
+            android:layout_width="278dp"
+            android:layout_height="69dp"
+            android:layout_marginTop="104dp"
+            android:text="CALL DOCTOR WEB SERVICES"
+            app:layout_constraintEnd_toEndOf="@+id/contentdoctor_textView"
+            app:layout_constraintStart_toStartOf="@+id/contentdoctor_textView"
+            app:layout_constraintTop_toBottomOf="@+id/contentdoctor_textView" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
