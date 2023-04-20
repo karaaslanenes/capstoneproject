@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">capstoneproject</string>
+    <string name="title_activity_doctor_maps">DoctorMapsActivity</string>
 </resources>
